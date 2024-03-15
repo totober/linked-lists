@@ -107,7 +107,7 @@ class LinkedList {
 
     find(value){
 
-       return this.contains(value, find);
+       return this.contains(value, true);
     };
 
     toString() {
@@ -127,6 +127,12 @@ class LinkedList {
     };
 
     insertAt(value, index){
+
+        
+        if(index === 0){
+            this.prepend(value)
+            return
+        }
 
         if(!(value && index)) {
             return console.error(new Error("You need 'value' and 'index' arguments"));
